@@ -43,7 +43,11 @@ RSpec.describe JiraBaseService do
     end
 
     it 'returns parsed JSON response' do
-      result = service.send(:call_jira_search, params)
+      service.call_jira_search(params)
+    end
+
+    it 'returns parsed JSON response' do
+      result = service.call_jira_search(params)
       expect(result).to eq({ "success" => true })
     end
 
