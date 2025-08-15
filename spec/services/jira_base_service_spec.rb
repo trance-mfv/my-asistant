@@ -29,7 +29,7 @@ RSpec.describe JiraBaseService do
     before do
       allow(mock_client).to receive(:tool).with("jira_search").and_return(mock_tool)
       allow(mock_tool).to receive(:execute).and_return(mock_result)
-      allow(service).to receive(:instance_variable_get).with(:@jira_mcp_client).and_return(mock_client)
+      allow(service).to receive(:jira_mcp_client).and_return(mock_client)
     end
 
     it 'executes jira_search tool with correct parameters' do
